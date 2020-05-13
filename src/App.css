@@ -38,6 +38,12 @@ a#github{
   margin: 0.5em 1em;
   border-radius: 5px;
 }
+.alert-danger{
+  background-color: rgb(226, 199, 199);
+  padding: 1em;
+  margin: 0.5em 1em;
+  border-radius: 5px;
+}
 .footer{
   text-decoration: underline;
   padding: 1em 0 0 0;
