@@ -20,7 +20,8 @@ class App extends React.Component {
     document.querySelector("#start").addEventListener('click',geoFindTrail);
     document.querySelector("#stop").addEventListener('click',stopTrail);
     document.querySelector("#download").addEventListener('click',downloadData);
-
+    document.querySelector("#github").addEventListener('click',githubRepo);
+   
     //Creating A File for to store data in csv
     let watchID, csvContent = "data:text/csv;charset=utf-8,";
     csvContent += ['Latitude','Longitude','Timestamp'].join(',') + '\r\n';
@@ -78,6 +79,16 @@ class App extends React.Component {
       document.body.appendChild(link);
       link.click();
     }
+    
+    //Github Repo
+    function githubRepo()
+    {
+      var link = document.createElement("a");
+      link.setAttribute("href","https://github.com/Tanmay0808/location-tracker/");
+      link.setAttribute("target","_blank");
+      document.body.appendChild(link);
+      link.click();
+    }
   }
 
   render() {
@@ -88,7 +99,7 @@ class App extends React.Component {
           <button id="start">Start</button>
           <button id="stop">Stop</button>
           <button id="download">Download Data</button>
-          <a id="github" href="https://github.com/Tanmay0808/location-tracker/">Github Repo</a>
+          <button id="github">Github Repo</button>
         </div>
         <div className="map-box" id="map-box"></div>
         <div className="footer">Click On Start Button</div>
