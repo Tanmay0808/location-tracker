@@ -29,7 +29,6 @@ class App extends React.Component {
     function geoFindTrail(){
       if (navigator.geolocation) {
         watchID = navigator.geolocation.watchPosition(function(pos) {
-          {
             const coords = [pos.coords.latitude,pos.coords.longitude,pos.timestamp];
             const myloc = document.createElement('div');
             myloc.className = 'alert alert-info';
@@ -40,13 +39,12 @@ class App extends React.Component {
             //Writing Co-ordinates in csv file
             csvContent += coords.join(",") + '\r\n';
             
-            map.setView(coords,15);
-            L.marker(coords).addTo(map).bindPopup(`Lat : ${coords[0]}
+            map.setView([coords[0],coords[1]],15);
+            L.marker([coords[0],coords[1]]).addTo(map).bindPopup(`Lat : ${coords[0]}
                                               <br> Lon : ${coords[1]}`);
           
             document.querySelector(".footer").innerHTML = '<h2>Location Trail</h2>';
             document.querySelector(".footer").after(myloc);
-          }
         },
         //Error Function
         function(error) {
@@ -59,6 +57,9 @@ class App extends React.Component {
         {
           enableHighAccuracy:true,
         });
+      }
+      else{
+        alert("Geo Location Not Supported");
       }
     }
     
