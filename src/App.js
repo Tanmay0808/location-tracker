@@ -87,7 +87,7 @@ class App extends React.Component {
           <button id="start">Start</button>
           <button id="stop">Stop</button>
           <button id="download">Download Data</button>
-          <a id="github" href="https://github.com/Tanmay0808/Location-Trail/">Github Repo</a>
+          <a id="github" href="https://github.com/Tanmay0808/location-tracker/">Github Repo</a>
         </div>
         <div className="map-box" id="map-box"></div>
         <div className="footer">Click On Start Button</div>
