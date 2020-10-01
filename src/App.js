@@ -3,9 +3,6 @@ import './App.css';
 import L from 'leaflet';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     //Creating Map
